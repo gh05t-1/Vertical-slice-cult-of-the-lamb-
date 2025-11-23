@@ -4,12 +4,10 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] protected float speed = 3f;
-    public static event Action OnStartPatrol;
-    public static event Action OnStopPatrol;
-    public static event Action OnStartChase;
-    public static event Action OnStopChase;
-    public static bool BlockAllMovement = false;
-
+    public event Action OnStartPatrol;
+    public event Action OnStopPatrol;
+    public event Action OnStartChase;
+    public event Action OnStopChase;
 
     protected void TriggerStartPatrol() => OnStartPatrol?.Invoke();
     protected void TriggerStopPatrol() => OnStopPatrol?.Invoke();

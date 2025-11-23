@@ -10,10 +10,15 @@ public class EnemyPatrol : EnemyMovement
     private bool isWaiting = false;
     private int targetPoint;
     private bool isPatrolling = true;
+    private EnemyChase enemyChase;
+    private EnemyDash enemyDash;
 
     private void Start()
     {
         targetPoint = 0;
+        enemyChase = GetComponent<EnemyChase>();
+        enemyDash = GetComponent<EnemyDash>();
+
         OnStartPatrol += () => isPatrolling = true;
         OnStopPatrol += () => isPatrolling = false;
 
@@ -23,10 +28,9 @@ public class EnemyPatrol : EnemyMovement
 
     private void Update()
     {
-        if (EnemyMovement.BlockAllMovement) return;
-
-        if (!isPatrolling || isWaiting || patrolPoints.Length == 0)
-            return;
+        if (!isPatrolling || isWaiting || patrolPoints.Length == 0) return;
+        if (enemyChase != null && enemyChase.IsChasing()) return;
+        if (enemyDash != null && (enemyDash.IsDashing() || enemyDash.IsLocked())) return;
 
         if (Vector3.Distance(transform.position, patrolPoints[targetPoint].position) <= arrivalThreshold)
         {
