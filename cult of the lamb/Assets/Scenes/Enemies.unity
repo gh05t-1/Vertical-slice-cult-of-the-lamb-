@@ -1302,10 +1302,10 @@ GameObject:
   - component: {fileID: 1625196403}
   - component: {fileID: 1625196402}
   - component: {fileID: 1625196401}
+  - component: {fileID: 1625196409}
   - component: {fileID: 1625196405}
   - component: {fileID: 1625196407}
   - component: {fileID: 1625196408}
-  - component: {fileID: 1625196409}
   - component: {fileID: 1625196410}
   m_Layer: 6
   m_Name: Enemy

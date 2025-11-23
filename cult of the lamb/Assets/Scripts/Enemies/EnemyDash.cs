@@ -10,6 +10,7 @@ public class EnemyDash : EnemyMovement
     private float lastDashTime = -Mathf.Infinity;
     private bool isDashing = false;
     private bool isLocked = false;
+    private float originalDashDuration;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class EnemyDash : EnemyMovement
         detector.OnDashZoneDetected += TryDash;
         detector.OnDashing += StopDashing;
         detector.OnDashingStop += StartDshing;
+        originalDashDuration = dashDuration;
     }
 
     private void TryDash(Transform player)
@@ -34,7 +36,7 @@ public class EnemyDash : EnemyMovement
 
     private void StartDshing(Transform player)
     {
-        dashDuration = 0.2f;
+        dashDuration = originalDashDuration;
     }   
 
     private System.Collections.IEnumerator DashRoutine(Transform player)
