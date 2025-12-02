@@ -6,9 +6,12 @@ public class EnemyChase : EnemyMovement
     private bool isChasing = false;
     private EnemyDash enemyDash;
     private float originalSpeed;
+
     private void Start()
     {
         EnemyDetection detector = GetComponent<EnemyDetection>();
+        EnemyHealth health = GetComponent<EnemyHealth>();
+        health.OnEnemyDeath += stopAllEvents;
         detector.OnPlayerDetected += StartChasingFromZone;
         detector.OnPlayerLost += StopChasingFromZone;
         enemyDash = GetComponent<EnemyDash>();
@@ -24,6 +27,8 @@ public class EnemyChase : EnemyMovement
 
         Vector3 playerPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
         Vector3 moveDir = (playerPosition - transform.position).normalized;
+
+        UpdateFlip(moveDir);
         transform.position += moveDir * speed * Time.deltaTime;
     }
 
@@ -40,9 +45,26 @@ public class EnemyChase : EnemyMovement
         player = null;
         isChasing = false;
         TriggerStopChase();
+
+        EnemyPatrol patrol = GetComponent<EnemyPatrol>();
+        if (patrol != null)
+        {
+            patrol.FindNearestPatrolPoint();
+        }
+
         TriggerStartPatrol();
     }
 
+    private void stopAllEvents()
+    {
+        EnemyDetection detector = GetComponent<EnemyDetection>();
+        EnemyHealth health = GetComponent<EnemyHealth>();
+        health.OnEnemyDeath -= stopAllEvents;
+        detector.OnPlayerDetected -= StartChasingFromZone;
+        detector.OnPlayerLost -= StopChasingFromZone;
+        detector.OnChaseing -= StopChasingFromCollider;
+        detector.OnChaseingStop -= StartChasingFromCollider;
+    }
     private void StopChasingFromCollider(Transform p)
     {
         speed = 0f;

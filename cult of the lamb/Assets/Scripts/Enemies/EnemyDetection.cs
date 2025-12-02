@@ -14,7 +14,6 @@ public class EnemyDetection : MonoBehaviour
     public event Action<Transform> OnChaseing;
     public event Action<Transform> OnChaseingStop;
     public event Action OnPlayerLost;
-
     private Transform detectedPlayer;
     private bool playerVisible = false;
 
@@ -60,6 +59,7 @@ public class EnemyDetection : MonoBehaviour
             OnChaseing?.Invoke(other.transform);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
