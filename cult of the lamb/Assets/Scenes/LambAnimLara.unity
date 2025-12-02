@@ -250,7 +250,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: a09ca5af8ab021d41a694ae1dea346c6, type: 3}
       propertyPath: m_Name
-      value: The Lamb Spritesheet Merge updated with better bell - Lara
+      value: LambSprite_Run
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a09ca5af8ab021d41a694ae1dea346c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -291,6 +291,10 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: a09ca5af8ab021d41a694ae1dea346c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869100675425149404, guid: a09ca5af8ab021d41a694ae1dea346c6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
