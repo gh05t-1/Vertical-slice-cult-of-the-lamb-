@@ -19,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
 
         // Normalize diagonal movement to prevent faster diagonal speed
         _movement = _movement.normalized;
+
+        //transform.position = transform.position + _movement * _speed * Time.deltaTime;
     }
 
     void FixedUpdate()
     {
+
         // Apply movement using physics
         _rb.MovePosition(_rb.position + _movement * _speed * Time.fixedDeltaTime);
     }
