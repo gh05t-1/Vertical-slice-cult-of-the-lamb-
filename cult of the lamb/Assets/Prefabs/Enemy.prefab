@@ -200,17 +200,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2992022698932776975}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.02999878}
-  m_LocalScale: {x: -0.03, y: -0.03, z: -0.03}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000040667757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3227894004855075011}
+  m_Father: {fileID: 5808091569344877954}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 1.6599998}
-  m_SizeDelta: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0.24000931, y: 0}
+  m_SizeDelta: {x: 1.3099976, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2929665068661163145
 CanvasRenderer:
@@ -282,7 +282,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5309375693417189305}
-  - {fileID: 1163344121873311860}
   m_Father: {fileID: 5175415824875093705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -410,9 +409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
   damagePerSecond: 5
-  enemyHealthBar: {fileID: 2322769324370862939}
+  damageDelay: 5
+  healthBar: {fileID: 0}
   reduceSpeed: 2
 --- !u!212 &8480001155366213461
 SpriteRenderer:
@@ -733,6 +732,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1496903981081016119}
+  - {fileID: 1163344121873311860}
   m_Father: {fileID: 5309375693417189305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}

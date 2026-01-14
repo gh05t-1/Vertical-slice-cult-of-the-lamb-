@@ -28,7 +28,6 @@ public class EnemyCounter : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void OnDestroy()
