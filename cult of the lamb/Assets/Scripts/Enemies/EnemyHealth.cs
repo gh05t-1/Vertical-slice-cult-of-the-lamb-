@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,41 +7,61 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    [SerializeField] private float currentHealth;
     [SerializeField] private float damagePerSecond = 5f;
-    [SerializeField] private Image enemyHealthBar;
-    [SerializeField] private float reduceSpeed = 2f;
+    [SerializeField] private float damageDelay = 5f;
+    [SerializeField] private Slider healthBar;
+    [SerializeField] private float reduceSpeed = 5f;
 
-    private float targetFillAmount = 1f;
+    private float currentHealth;
+    private float targetValue = 1f;
+    private bool takingDamage;
 
     public event Action OnEnemyDeath;
 
     private void Start()
     {
         currentHealth = maxHealth;
-        targetFillAmount = 1f;
-        enemyHealthBar.fillAmount = 1f;
+
+        healthBar.minValue = 0f;
+        healthBar.maxValue = 1f;
+        healthBar.value = 1f;
+        healthBar.gameObject.SetActive(false);
+
+        StartCoroutine(DamageAfterDelay());
     }
 
     private void Update()
     {
-        TakeDamage(damagePerSecond * Time.deltaTime);
-        enemyHealthBar.fillAmount = math.lerp(
-            enemyHealthBar.fillAmount,
-            targetFillAmount,
+        if (takingDamage)
+        {
+            if (!healthBar.gameObject.activeSelf)
+                healthBar.gameObject.SetActive(true);
+
+            ApplyDamage(damagePerSecond * Time.deltaTime);
+        }
+
+
+        healthBar.value = math.lerp(
+            healthBar.value,
+            targetValue,
             Time.deltaTime * reduceSpeed
         );
     }
 
-    public void TakeDamage(float damage)
+    private IEnumerator DamageAfterDelay()
     {
-        currentHealth -= damage;
-        currentHealth = math.max(currentHealth, 0);
-        targetFillAmount = currentHealth / maxHealth;
-        if (currentHealth <= 0)
-        {
+        yield return new WaitForSeconds(damageDelay);
+        if (damagePerSecond > 0f)
+            takingDamage = true;
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        currentHealth = math.max(currentHealth - damage, 0f);
+        targetValue = currentHealth / maxHealth;
+
+        if (currentHealth <= 0f)
             Die();
-        }
     }
 
     private void Die()
@@ -49,3 +70,4 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
