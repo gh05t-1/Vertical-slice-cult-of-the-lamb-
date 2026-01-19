@@ -37,8 +37,16 @@ public class Dodge : MonoBehaviour
     private IEnumerator Roll()
     {
         _dodging = false;
+        // Get input for movement
+        Vector3 _movement = Vector3.zero;
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.z = Input.GetAxisRaw("Vertical");
+
+        // Normalize diagonal movement to prevent faster diagonal speed
+        _movement = _movement.normalized;
+
         Physics.IgnoreLayerCollision(_playerLayer, _enemyLayer, _dodging);
-         _rb.AddForce(transform.position * _rollSpeed * Time.deltaTime, ForceMode.Impulse);
+         _rb.AddForce(_movement * _rollSpeed * Time.deltaTime, ForceMode.Impulse);
         //_rb.linearVelocity = new Vector3(_moveDirection.x * _rollSpeed, 0, _moveDirection.z * _rollSpeed);
         // _rb.linearVelocity = new Vector3(transform.localScale.x * _rollSpeed, 0, transform.localScale.z *_rollSpeed)
         yield return new WaitForSeconds(_rollTime);
