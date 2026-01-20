@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf6af4e0831ed243aa0794cefa19dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rollSpeed: 10
+  _rollSpeed: 2000
   _rollTime: 0.2
   _playerLayer:
     serializedVersion: 2
