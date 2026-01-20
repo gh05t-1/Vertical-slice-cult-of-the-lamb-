@@ -551,6 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946720052}
   - component: {fileID: 1946720053}
+  - component: {fileID: 1946720054}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -628,6 +629,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1946720054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946720051}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1992426490
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +660,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1992426491}
   - component: {fileID: 1992426492}
-  - component: {fileID: 1992426493}
   m_Layer: 0
   m_Name: WeaponParent
   m_TagString: Untagged
@@ -678,28 +699,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   angleOffsetDegrees: 280
   rotationSmoothing: 0
-  attackMouseButton: 0
+  attackMouseButton: 2
   attackTriggerName: Attack
---- !u!114 &1992426493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992426490}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edfa3cade9d5fbc4aab9cd9adc6ad7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 1
-  damage: 25
-  attackCooldown: 0.5
-  nextAttackTime: 0
-  attackPoint: {fileID: 0}
-  enemyLayers:
-    m_Bits: 0
-  animator: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
