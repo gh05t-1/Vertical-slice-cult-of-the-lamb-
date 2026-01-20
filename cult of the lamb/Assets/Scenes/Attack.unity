@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317355590348983416, guid: 8d070d319f20bd34585d8dfe3a26a705, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.182663
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 6317355590348983416, guid: 8d070d319f20bd34585d8dfe3a26a705, type: 3}
       propertyPath: m_LocalPosition.y
@@ -189,7 +189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1732610573737676109, guid: 7c863d91d3f7a3a45ae54aa52cb17215, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.182663
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 1732610573737676109, guid: 7c863d91d3f7a3a45ae54aa52cb17215, type: 3}
       propertyPath: m_LocalPosition.y
@@ -361,6 +361,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!20 &1430565444 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8756826495906527867, guid: 7c863d91d3f7a3a45ae54aa52cb17215, type: 3}
+  m_PrefabInstance: {fileID: 212069134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1476841882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 1715792069}
     - target: {fileID: 6922315448134437329, guid: 00ae92d140cc29843a5440d7b33d25a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.182663
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 6922315448134437329, guid: 00ae92d140cc29843a5440d7b33d25a1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -633,6 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992426491}
   - component: {fileID: 1992426492}
+  - component: {fileID: 1992426493}
   m_Layer: 0
   m_Name: WeaponParent
   m_TagString: Untagged
@@ -668,9 +674,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea159c287d0fac46b5e8033ed296599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1430565444}
+  animator: {fileID: 0}
   angleOffsetDegrees: 280
   rotationSmoothing: 0
+  attackMouseButton: 0
+  attackTriggerName: Attack
+--- !u!114 &1992426493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992426490}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfa3cade9d5fbc4aab9cd9adc6ad7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1
+  damage: 25
+  attackCooldown: 0.5
+  nextAttackTime: 0
+  attackPoint: {fileID: 0}
+  enemyLayers:
+    m_Bits: 0
+  animator: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

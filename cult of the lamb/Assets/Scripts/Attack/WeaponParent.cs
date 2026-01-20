@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class Rotate2DToMouseZ : MonoBehaviour
 {
-    [Header("References")]
-    public Camera cam;                     // If null, defaults to Camera.main
 
-    [Header("Tuning")]
-    [Tooltip("Degrees to add after computing the angle (use if your sprite isn't facing +X).")]
-    public float angleOffsetDegrees = 0f;  // e.g., 90 if sprite's up should point to mouse
-    [Tooltip("Smoothing factor; 0 = instant snap.")]
-    public float rotationSmoothing = 0f;   // e.g., 15 for smooth
+    [SerializeField] private Camera cam;
+    [SerializeField] private Animator animator;
+
+
+    [SerializeField] private float angleOffsetDegrees = 0f;
+    [SerializeField] private float rotationSmoothing = 0f;
+
+    [SerializeField] private int attackMouseButton = 0;
+    [SerializeField] private string attackTriggerName = "Attack";
 
     void Awake()
     {
@@ -21,27 +23,30 @@ public class Rotate2DToMouseZ : MonoBehaviour
     {
         if (cam == null) return;
 
-        // Get world position of the mouse at the object's depth
+        // Rotation
         Vector3 mouseWorld = GetMouseWorldAtObjectDepth(transform.position, cam);
-
-        // Compute direction in the XY plane (ignore Z)
         Vector2 dir = (Vector2)(mouseWorld - transform.position);
+
+
         if (dir.sqrMagnitude < 1e-6f) return;
 
-        // Angle in degrees, 0° pointing +X, increasing CCW (Unity's default)
-        float angleDeg = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + angleOffsetDegrees;
 
-        // Build a pure Z-axis rotation
+        float angleDeg = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + angleOffsetDegrees;
         Quaternion target = Quaternion.Euler(0f, 0f, angleDeg);
 
-        // Apply with optional smoothing
         if (rotationSmoothing > 0f)
-        {
             transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * rotationSmoothing);
-        }
         else
-        {
             transform.rotation = target;
+
+        // Attack input
+        if (Input.GetMouseButtonDown(attackMouseButton))
+        {
+            Debug.Log("attack");
+            if (animator != null && !string.IsNullOrEmpty(attackTriggerName))
+            {
+                animator.SetTrigger(attackTriggerName);
+            }
         }
     }
 
@@ -53,8 +58,6 @@ public class Rotate2DToMouseZ : MonoBehaviour
     {
         if (cam.orthographic)
         {
-            // For orthographic cameras, ScreenToWorldPoint ignores z and uses camera's near plane,
-            // so set z to the object's plane by copying the object's z after conversion.
             Vector3 mousePos = Input.mousePosition;
             Vector3 world = cam.ScreenToWorldPoint(mousePos);
             world.z = objectPos.z;
@@ -62,12 +65,10 @@ public class Rotate2DToMouseZ : MonoBehaviour
         }
         else
         {
-            // For perspective, we must pass the correct distance from the camera to the object
             float distance = Vector3.Dot(objectPos - cam.transform.position, cam.transform.forward);
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = distance; // depth along view direction
+            mousePos.z = distance;
             return cam.ScreenToWorldPoint(mousePos);
         }
     }
 }
-
