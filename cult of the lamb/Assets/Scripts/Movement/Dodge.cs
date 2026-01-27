@@ -10,6 +10,9 @@ public class Dodge : MonoBehaviour
    // Vector3 _moveDirection;
     bool _dodging = true;
 
+    [SerializeField] private Animator _animator;
+
+
 
     [SerializeField] LayerMask _playerLayer;
     [SerializeField] LayerMask _enemyLayer;
@@ -36,6 +39,8 @@ public class Dodge : MonoBehaviour
 
     private IEnumerator Roll()
     {
+        // Play dodge animation
+        _animator.SetBool("isDashing", true);
         _dodging = false;
         // Get input for movement
         Vector3 _movement = Vector3.zero;
@@ -50,6 +55,8 @@ public class Dodge : MonoBehaviour
         //_rb.linearVelocity = new Vector3(_moveDirection.x * _rollSpeed, 0, _moveDirection.z * _rollSpeed);
         // _rb.linearVelocity = new Vector3(transform.localScale.x * _rollSpeed, 0, transform.localScale.z *_rollSpeed)
         yield return new WaitForSeconds(_rollTime);
+        // Stop dodge animation
+        _animator.SetBool("isDashing", false);
         _rb.linearVelocity = new Vector3(0, 0, 0);
         _dodging = true;
     }
