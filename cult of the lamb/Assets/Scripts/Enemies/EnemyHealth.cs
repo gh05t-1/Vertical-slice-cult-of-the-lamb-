@@ -57,8 +57,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        currentHealth = math.max(currentHealth - damage, 0f);
-        targetValue = currentHealth / maxHealth;
+        //currentHealth = math.max(currentHealth - damage, 0f);
+        //targetValue = currentHealth / maxHealth;
+        currentHealth -= damage;
 
         if (currentHealth <= 0f)
             Die();
