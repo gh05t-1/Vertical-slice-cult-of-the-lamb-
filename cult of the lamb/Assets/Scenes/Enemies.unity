@@ -6811,6 +6811,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3506856422293339827, guid: 8d070d319f20bd34585d8dfe3a26a705, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1326685949}
+    - targetCorrespondingSourceObject: {fileID: 3506856422293339827, guid: 8d070d319f20bd34585d8dfe3a26a705, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1326685956}
   m_SourcePrefab: {fileID: 100100000, guid: 8d070d319f20bd34585d8dfe3a26a705, type: 3}
 --- !u!1 &887248784
 GameObject:
@@ -9800,6 +9803,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6317355590348983416, guid: 8d070d319f20bd34585d8dfe3a26a705, type: 3}
   m_PrefabInstance: {fileID: 819455048}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1326685956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326685948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf6af4e0831ed243aa0794cefa19dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rollSpeed: 17000
+  _rollTime: 0.2
+  _animator: {fileID: 1524745607}
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1343953077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: a09ca5af8ab021d41a694ae1dea346c6, type: 3}

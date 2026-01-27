@@ -1,13 +1,12 @@
 
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class MovementAnimations : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
-    void Update()
+    private  void Update()
     {
-        PlayerMovement movement = GetComponent<PlayerMovement>();
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             _animator.SetBool("isWalking", true);
