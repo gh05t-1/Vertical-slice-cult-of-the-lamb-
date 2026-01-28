@@ -59,8 +59,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-
-        currentHealth -= damage;
+        currentHealth = math.max(currentHealth - damage, 0f);
+        targetValue = currentHealth / maxHealth;
+        healthBar.gameObject.SetActive(true);
 
         if (currentHealth <= 0f)
             Die();

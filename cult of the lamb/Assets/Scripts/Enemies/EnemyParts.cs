@@ -31,7 +31,7 @@ public class EnemyParts : MonoBehaviour
             Vector3 pos = transform.position;
             pos.y = baseY;
             part.transform.position = pos;
-            part.transform.rotation = Quaternion.Euler(0, 180, 0);
+            part.transform.rotation = Quaternion.Euler(0, -180, 0);
             bodyParts.Add(part);
         }
     }
@@ -65,7 +65,7 @@ public class EnemyParts : MonoBehaviour
             p.y = baseY;
             bodyParts[i].transform.position = p;
 
-            bodyParts[i].transform.rotation = Quaternion.Euler(0, 180, 0);
+            bodyParts[i].transform.rotation = Quaternion.Euler(0, -180, 0);
         }
     }
 }

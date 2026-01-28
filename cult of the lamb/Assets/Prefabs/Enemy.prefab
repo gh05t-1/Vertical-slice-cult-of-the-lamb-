@@ -544,7 +544,7 @@ MonoBehaviour:
   - {fileID: 7673631973334765037, guid: 985b2ce32c4ea4c4d8685f44dd4c467a, type: 3}
   bodyLength: 4
   gap: 0.2
-  baseY: 8.3
+  baseY: 8
 --- !u!114 &1126926126549445444
 MonoBehaviour:
   m_ObjectHideFlags: 0
