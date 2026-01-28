@@ -12,11 +12,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private float reduceSpeed = 5f;
 
+
     private float currentHealth;
     private float targetValue = 1f;
     private bool takingDamage;
 
     public event Action OnEnemyDeath;
+
 
     private void Start()
     {
@@ -57,11 +59,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        currentHealth = math.max(currentHealth - damage, 0f);
-        targetValue = currentHealth / maxHealth;
+
+        currentHealth -= damage;
 
         if (currentHealth <= 0f)
             Die();
+
     }
 
     private void Die()
