@@ -4,13 +4,35 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     [SerializeField] float _damage;
+    bool _inTrigger;
+    [SerializeField] EnemyHealth _enemyHealth;
+ 
 
-    public void OnTriggerEnter(Collider other)
+
+    private void Update()
     {
-        if (other.CompareTag("Enemy") && Input.GetKeyDown(KeyCode.Mouse0))
+
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _inTrigger)
         {
-            Debug.Log("Hit");
-            GetComponent<EnemyHealth>().ApplyDamage(_damage);
+
+            _enemyHealth.ApplyDamage(_damage);
         }
+    }
+    public void OnTriggerEnter(Collider other)
+    {if (other.CompareTag("Enemy"))
+        {
+            _inTrigger = true;
+
+            
+        }
+    }
+
+
+
+    public void OnTriggerExit(Collider other)
+    {
+        _inTrigger = false;
+
     }
 }
