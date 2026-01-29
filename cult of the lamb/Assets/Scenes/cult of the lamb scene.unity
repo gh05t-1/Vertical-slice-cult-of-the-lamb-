@@ -526,6 +526,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &62902117 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7676518449615147099, guid: fdcfacb08c810784da3910bd1c7b74b3, type: 3}
+  m_PrefabInstance: {fileID: 519030819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &62902119 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6437910410296268263, guid: fdcfacb08c810784da3910bd1c7b74b3, type: 3}
+  m_PrefabInstance: {fileID: 519030819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &73927754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 8b1eb0862a14bb2479c837a08cf9ab89, type: 3}
@@ -5065,7 +5075,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3357646581748038808, guid: fdcfacb08c810784da3910bd1c7b74b3, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 7676518449615147099, guid: fdcfacb08c810784da3910bd1c7b74b3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 906411948}
     m_AddedComponents: []
@@ -9093,7 +9103,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1171129752}
+  m_Father: {fileID: 62902117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &906411952
 BoxCollider:
@@ -16366,6 +16376,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 25
+  _enemyHealth: {fileID: 1701172416}
+  _animator: {fileID: 62902119}
+--- !u!114 &1701172416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5189082487951066407, guid: 8eb1b7bed065f684783f356ba76e363d, type: 3}
+  m_PrefabInstance: {fileID: 745845577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374870344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a59b36292a2cc342b85a9f83b566194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1713842049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17331,6 +17354,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 25
+  _enemyHealth: {fileID: 1838948082}
+  _animator: {fileID: 62902119}
+--- !u!114 &1838948082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5189082487951066407, guid: 8eb1b7bed065f684783f356ba76e363d, type: 3}
+  m_PrefabInstance: {fileID: 1247863553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526771435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a59b36292a2cc342b85a9f83b566194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1845474308
 GameObject:
   m_ObjectHideFlags: 0
@@ -17436,6 +17472,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 25
+  _enemyHealth: {fileID: 1848538164}
+  _animator: {fileID: 62902119}
+--- !u!114 &1848538164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5189082487951066407, guid: 8eb1b7bed065f684783f356ba76e363d, type: 3}
+  m_PrefabInstance: {fileID: 267833135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405610733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a59b36292a2cc342b85a9f83b566194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850296708
 GameObject:
   m_ObjectHideFlags: 0
