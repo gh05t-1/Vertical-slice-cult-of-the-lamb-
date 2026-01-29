@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4558414417012688590
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  postExposure:
+    m_OverrideState: 1
+    m_Value: 0.51
+  contrast:
+    m_OverrideState: 0
+    m_Value: 0
+  colorFilter:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 0
+  saturation:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-2641023428682324220
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -67,16 +95,16 @@ MonoBehaviour:
     m_Value: 0.8
   intensity:
     m_OverrideState: 1
-    m_Value: 9.71
+    m_Value: 2.39
   scatter:
     m_OverrideState: 1
-    m_Value: 0.86
+    m_Value: 0.667
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.6528301, g: 0.2993164, b: 0.2993164, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -111,6 +139,7 @@ MonoBehaviour:
   - {fileID: -1125834976321271718}
   - {fileID: -2641023428682324220}
   - {fileID: 963136653498733032}
+  - {fileID: -4558414417012688590}
 --- !u!114 &425240882163376621
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -126,7 +155,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.2
 --- !u!114 &963136653498733032
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -142,13 +171,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.843073, z: 0.9748643, w: -0.0000001989614}
+    m_Value: {x: 0.95520645, y: 0.71276224, z: 1, w: -0.017797552}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.7796959, y: 0.5056219, z: 1, w: 0.012360926}
+    m_Value: {x: 0.7796959, y: 0.5056219, z: 1, w: 0.02025637}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.67119, y: 0.7844077, z: 1, w: 0.0988875}
+    m_Value: {x: 0.67119, y: 0.7844077, z: 1, w: 0.19354847}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -175,14 +204,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   color:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0.004792874, b: 0.08679241, a: 1}
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.361
+    m_Value: 0.38
   smoothness:
     m_OverrideState: 1
     m_Value: 1

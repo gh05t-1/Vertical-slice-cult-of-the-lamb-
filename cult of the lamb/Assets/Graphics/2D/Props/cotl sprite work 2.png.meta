@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97957f143f5a07c4f98fa8501ce2e9b6
+guid: 4f26a6fa040f26b45beea656c57ebb52
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -95,12 +95,56 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cotl sprite work 2_0
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 214
+        width: 499
+        height: 1494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2314b3726afe28c4a99c38533346a1c3
+      internalID: -1996052131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cotl sprite work 2_1
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 22
+        width: 1284
+        height: 2115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a915dfb9973a7e54b823c7e056104d2a
+      internalID: -340114383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ea0dc0742cdc3c749919301a5bb6780f
     internalID: 0
     vertices: []
     indices: 
@@ -109,7 +153,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cotl sprite work 2_0: -1996052131
+      cotl sprite work 2_1: -340114383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
