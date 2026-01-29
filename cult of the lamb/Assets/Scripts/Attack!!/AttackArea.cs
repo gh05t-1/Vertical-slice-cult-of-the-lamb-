@@ -5,9 +5,10 @@ public class AttackArea : MonoBehaviour
 {
     [SerializeField] float _damage;
     bool _inTrigger;
-    [SerializeField] EnemyHealth _enemyHealth;
  
 
+
+  
 
     private void Update()
     {
@@ -15,12 +16,12 @@ public class AttackArea : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && _inTrigger)
         {
-
-            _enemyHealth.ApplyDamage(_damage);
+            Debug.Log("Hit");
+            GetComponent<EnemyHealth>().ApplyDamage(_damage);
         }
     }
     public void OnTriggerEnter(Collider other)
-    {if (other.CompareTag("Enemy"))
+    {if (other.CompareTag("Attack"))
         {
             _inTrigger = true;
 
