@@ -4,3 +4,5 @@ Enemy Movements
 
 Movement&ChestOpenening
 
+![ezgif-45a0aaf06bc8554f](https://github.com/user-attachments/assets/d7afbafa-5828-448f-9e46-dd5338ece5d1)
+
